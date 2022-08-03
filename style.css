@@ -1,0 +1,60 @@
+header, footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background-color: gray;
+    background-size: cover;
+    background: url("https://images.unsplash.com/photo-1651904613373-84d7d53ef87d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80") bottom no-repeat;
+}
+
+body main{
+    margin: 0px;
+    padding: 10px;
+}
+
+h1{
+    color: blue;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: rgb(12, 12, 180);
+}
+
+table{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid grey;
+    border-collapse: collapse;
+    width: 600px;
+    border-spacing: 10px 20px;
+}
+
+td{
+    width : 100px;
+    border: 2px solid grey;
+    background: rgb(190, 239, 252);
+}
+
+.tr_header{
+    font-size: 20px;
+    background: rgb(118, 205, 226);
+}
+
+.tr_header_strong{
+    font-size: 20px;
+    background: rgb(49, 255, 193);
+}
+
+.td_strong{
+    background: rgb(170, 243, 221);
+}
+
+.td_not_strong{
+    background: rgb(144, 250, 167);
+}
