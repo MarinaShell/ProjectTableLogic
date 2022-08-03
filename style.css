@@ -58,3 +58,12 @@ td{
 .td_not_strong{
     background: rgb(144, 250, 167);
 }
+
+.td_comp{
+    background: rgb(248, 250, 144);
+}
+
+.tr_header_comp{
+    font-size: 20px;
+    background: rgb(252, 193, 0);
+}

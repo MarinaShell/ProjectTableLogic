@@ -2,14 +2,13 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Новости дня</title>
+    <title>Таблицы истинности</title>
     <link rel="stylesheet" href = "style.css">
 </head>
 
 <body>
 
-    <header>
-        
+    <header>       
     </header>
 
     <?php 
@@ -32,8 +31,10 @@
             {
                 $arrayResult[$i][$j] = ($arrayCompare[$i] == $arrayCompare[$j]);
                 $arrayResultStrong[$i][$j] = ($arrayCompare[$i] === $arrayCompare[$j]);
+                $arrayResultCompare[$i][$j] = ($arrayResult[$i][$j] == $arrayResultStrong[$i][$j] );
             }
         }
+
 
         function boolToStr(bool $value) {
             return ($value) ? '1' : '0';
@@ -55,8 +56,6 @@
             else             
                return $value;
         }
-
-
     ?>
 
     <main>
@@ -121,7 +120,7 @@
                     <td class = "tr_header_strong"> </td>   
                     <?php 
                         foreach($arrayCompare as $i){
-                        echo "<td class = \"tr_header_strong\">".boolToStr3($i)."</td>";
+                            echo "<td class = \"tr_header_strong\">".boolToStr3($i)."</td>";
                         }
                     ?>
                 </tr>
@@ -130,10 +129,10 @@
                         foreach ($arrayResult as $key => $item){
                             echo "<tr>";   
                             if (i==0 )
-                            echo "<td class = \"tr_header_strong\">".boolToStr3($arrayCompare[$i])."</td>";
+                                echo "<td class = \"tr_header_strong\">".boolToStr3($arrayCompare[$i])."</td>";
                             $i++;
                             foreach ($item as $sub_item){
-                            echo "<td class = \"td_not_strong\">".boolToStr2($sub_item)."</td>";                           
+                                echo "<td class = \"td_not_strong\">".boolToStr2($sub_item)."</td>";                           
                             }
                             echo "</tr>";                           
                        }
@@ -149,7 +148,7 @@
                     <td class = "tr_header_strong"> </td>   
                     <?php 
                         foreach($arrayCompare as $i){
-                        echo "<td class = \"tr_header_strong\">".boolToStr3($i)."</td>";
+                            echo "<td class = \"tr_header_strong\">".boolToStr3($i)."</td>";
                         }
                     ?>
                 </tr>
@@ -158,10 +157,10 @@
                         foreach ($arrayResultStrong as $key => $item){
                             echo "<tr>";   
                             if (i==0 )
-                            echo "<td class = \"tr_header_strong\">".boolToStr3($arrayCompare[$i])."</td>";
+                                echo "<td class = \"tr_header_strong\">".boolToStr3($arrayCompare[$i])."</td>";
                             $i++;
                             foreach ($item as $sub_item){
-                            echo "<td class = \"td_strong\">".boolToStr2($sub_item)."</td>";                           
+                                echo "<td class = \"td_strong\">".boolToStr2($sub_item)."</td>";                           
                             }
                             echo "</tr>";                           
                        }
@@ -169,29 +168,31 @@
             </table>
         </div>
 
-        <h1>Результаты сравнения</h1>
+        <h1>Результаты сравнения: true - результаты совпали, false - нет</h1>
         <div>           
             <table cols = "8" >
-            <caption><b>Жесткое сравнение ===</b></caption>
                 <!-- первая строка заголовок-->
                 <tr>
-                    <td class = "tr_header_strong"> </td>   
+                    <td class = "tr_header_comp"> </td>   
                     <?php 
                         foreach($arrayCompare as $i){
-                        echo "<td class = \"tr_header_strong\">".boolToStr3($i)."</td>";
+                            echo "<td class = \"tr_header_comp\">".boolToStr3($i)."</td>";
                         }
                     ?>
                 </tr>
                 <?php 
                         $i = 0;
-                        foreach ($arrayResultStrong as $key => $item){
+                        foreach ($arrayResultCompare as $key => $item){
                             echo "<tr>";   
                             if (i==0 )
-                            echo "<td class = \"tr_header_strong\">".boolToStr3($arrayCompare[$i])."</td>";
-                            $i++;
+                                echo "<td class = \"tr_header_comp\">".boolToStr3($arrayCompare[$i])."</td>";
+                           
+                            $j = 0;
                             foreach ($item as $sub_item){
-                            echo "<td class = \"td_strong\">".boolToStr2($sub_item)."</td>";                           
+                                echo "<td class = \"td_comp\">".boolToStr2($sub_item)."</td>";                           
+                                $j++;
                             }
+                            $i++;
                             echo "</tr>";                           
                        }
                 ?>
