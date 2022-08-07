@@ -189,10 +189,9 @@
                            
                             $j = 0;
                             foreach ($item as $sub_item){
-                                echo "<td class = \"td_comp\">".boolToStr2($sub_item)."</td>";                           
-                                $j++;
-                            }
-                            $i++;
+                                echo "<td class = \"td_comp\">".boolToStr2($sub_item)."</td>"; 
+ 
+                            }                            
                             echo "</tr>";                           
                        }
                 ?>
